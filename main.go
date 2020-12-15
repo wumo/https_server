@@ -26,5 +26,5 @@ func main() {
         http.Handle("/", http.FileServer(http.Dir(*directory)))
 
         log.Printf("Serving %s on HTTP port: %s\ncertFile: %s, keyFile: %s\n", *directory, *port, *certFile, *keyFile)
-        log.Fatal(http.ListenAndServeTLS(":"+*port, certFile, keyFile, nil))
+        log.Fatal(http.ListenAndServeTLS(":"+*port, *certFile, *keyFile, nil))
 }
